@@ -12,6 +12,7 @@ function App() {
  buttonText="Configure now"
  />
 <SubNav />
+<Footer />
   </>  
   )
 }
