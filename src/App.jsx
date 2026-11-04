@@ -1,15 +1,25 @@
 import "./App.css";
 
+//import NavBar from "./components/NavBar.jsx";
+import Hero from "./components/Hero.jsx";
+import SubNav from "./components/SubNav.jsx";
+import Footer from "./components/Footer.jsx";
 import Card from "./components/Card.jsx";
 import { cards } from "./data/cards.js";
-import sectionimage from "./assets/aeUQGZ1ZCF7ETVrw_fw13-family_overview_storanghe-and-memory.avif";
-import sectionImage2 from "./assets/aKRVMqTt2nPbadK7_fw13_family_overview_end-image.avif"
+import sectionImage from "./assets/aeUQGZ1ZCF7ETVrw_fw13-family_overview_storanghe-and-memory.avif";
+import sectionImage2 from "./assets/aKRVMqTt2nPbadK7_fw13_family_overview_end-image.avif";
 import emailIcon from "./assets/email-icon-transparent.svg";
-
 
 function App() {
   return (
     <>
+      <Hero
+        title="This isn't our computer. It's yours."
+        subtitle="Updated for 2025 with AMD's latest Ryzen™ AI 300 Series processors, with up to 12 CPU cores."
+        buttonText="Configure now"
+      />
+      <SubNav />
+
       <section className="container pt-4 pb-5">
         <div className="row g-4">
           {cards.map((card) => (
@@ -20,16 +30,14 @@ function App() {
         </div>
       </section>
 
-
-     <section className="container pt-5">
+      <section className="container pt-5">
         <img
-          src={sectionimage}
+          src={sectionImage}
           alt="A studio shot of Framework Laptop 13 showing storage installation."
           className="w-100 rounded-4"
           loading="lazy"
         />
       </section>
-
 
       <section className="container pb-5 text-start">
         <div className="row">
@@ -49,63 +57,72 @@ function App() {
             </p>
           </div>
         </div>
-     </section>
+      </section>
 
-     <section className="text-center pb-5">
-      <img
-      src={emailIcon}
-      style={{ width: "96px", height: "auto" }}
-      />
-      <h3 className="fw-semibold mb-4 mt-2">Keep track of what we’re working on<br/>with the Framework Newsletter.</h3>
-      <form
-        className="d-flex flex-column flex-sm-row justify-content-center gap-2 mx-auto"
-        style={{ maxWidth: "800px" }}
-        onSubmit={(e) => {
-          e.preventDefault();
-          // handle the email here
-        }}
-      >
-
-      <input
-        type="email"
-        className="form-control border-0 border-bottom border-dark rounded-0 shadow-none px-0 py-2 bg-transparent"
-        placeholder="Your Email"
-        aria-label="Email address"
-        required
-      />
-      <button
-      type="submit"
-      className="btn btn-dark rounded-pill px-4 py-2 fw-semibold"
-      >Subscribe</button>
-    </form>
-    </section>
-
-     <section>
-      <img 
-      src={sectionImage2}
-      className="w-100"
-      loading="lazy"
-      />
-     </section>
-     <section className="container text-center py-5 my-lg-5">
-      <div className="row justify-content-center">
-        <div className="col-12 col-lg-8">
-          <h3 className="fw-semibold mb-4">
-            Help shape future Framework products. Click below to take a quick survey.
-          </h3>
-
-          <a
-            href="https://frameworkcomputer.typeform.com/to/q5BoD51G?utm_medium=13overview"
+      <section className="text-center pb-5">
+        <img
+          src={emailIcon}
+          alt=""
+          style={{ width: "96px", height: "auto" }}
+        />
+        <h3 className="fw-semibold mb-4 mt-2">
+          Keep track of what we’re working on
+          <br />
+          with the Framework Newsletter.
+        </h3>
+        <form
+          className="d-flex flex-column flex-sm-row justify-content-center gap-2 mx-auto"
+          style={{ maxWidth: "800px" }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            // handle the email here
+          }}
+        >
+          <input
+            type="email"
+            className="form-control border-0 border-bottom border-dark rounded-0 shadow-none px-0 py-2 bg-transparent"
+            placeholder="Your Email"
+            aria-label="Email address"
+            required
+          />
+          <button
+            type="submit"
             className="btn btn-dark rounded-pill px-4 py-2 fw-semibold"
-            target="_blank"
-            rel="noreferrer"
           >
-            Take our survey
-          </a>
+            Subscribe
+          </button>
+        </form>
+      </section>
+
+      <section>
+        <img
+          src={sectionImage2}
+          alt=""
+          className="w-100"
+          loading="lazy"
+        />
+      </section>
+
+      <section className="container text-center py-5 my-lg-5">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-8">
+            <h3 className="fw-semibold mb-4">
+              Help shape future Framework products. Click below to take a quick survey.
+            </h3>
+
+            <a
+              href="https://frameworkcomputer.typeform.com/to/q5BoD51G?utm_medium=13overview"
+              className="btn btn-dark rounded-pill px-4 py-2 fw-semibold"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Take our survey
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-       
+      </section>
+
+      <Footer />
     </>
   );
 }
