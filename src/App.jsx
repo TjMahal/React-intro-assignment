@@ -3,6 +3,7 @@ import './App.css'
 import NavBar from './components/NavBar.jsx'
 import Hero from './components/Hero.jsx'
 import SubNav from './components/SubNav.jsx'
+import Footer from './components/Footer.jsx'
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
  buttonText="Configure now"
  />
 <SubNav />
-
+<Footer />
   </>  
   )
 }
+
 
 export default App  
